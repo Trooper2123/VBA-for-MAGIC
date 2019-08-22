@@ -1,0 +1,62 @@
+Sub caards()
+Dim linha As Integer
+linha = 2
+Worksheets("List").Activate
+Range("a2").Select
+    Do While ActiveCell <> ""
+ 
+        If ActiveCell = "Azul" Then
+            Range(Cells(linha, 1), Cells(linha, 5)).Select
+            Application.CutCopyMode = False
+            Selection.Cut
+            Sheets("Azul").Select
+            Range("a1048576").End(xlUp).Offset(1, 0).Select
+            ActiveSheet.Paste
+            linha = linha + 1
+        ElseIf ActiveCell = "Vermelho" Then
+            Range(Cells(linha, 1), Cells(linha, 5)).Select
+            Application.CutCopyMode = False
+            Selection.Cut
+            Sheets("Vermelho").Select
+            Range("a1048576").End(xlUp).Offset(1, 0).Select
+            ActiveSheet.Paste
+            linha = linha + 1
+        ElseIf ActiveCell = "Preto" Then
+            Range(Cells(linha, 1), Cells(linha, 5)).Select
+            Application.CutCopyMode = False
+            Selection.Cut
+            Sheets("Preto").Select
+            Range("a1048576").End(xlUp).Offset(1, 0).Select
+            ActiveSheet.Paste
+            linha = linha + 1
+        ElseIf ActiveCell = "Verde" Then
+            Range(Cells(linha, 1), Cells(linha, 5)).Select
+            Application.CutCopyMode = False
+            Selection.Cut
+            Sheets("Verde").Select
+            Range("a1048576").End(xlUp).Offset(1, 0).Select
+            ActiveSheet.Paste
+            linha = linha + 1
+        ElseIf ActiveCell = "Branco" Then
+            Range(Cells(linha, 1), Cells(linha, 5)).Select
+            Application.CutCopyMode = False
+            Selection.Cut
+            Sheets("Branco").Select
+            Range("a1048576").End(xlUp).Offset(1, 0).Select
+            ActiveSheet.Paste
+            linha = linha + 1
+        Else
+            Range(Cells(linha, 1), Cells(linha, 5)).Select
+            Application.CutCopyMode = False
+            Selection.Cut
+            Sheets("Incolor").Select
+            Range("a1048576").End(xlUp).Offset(1, 0).Select
+            ActiveSheet.Paste
+            linha = linha + 1
+        End If
+    Worksheets("List").Activate
+    ActiveCell.Offset(1, 0).Select
+    Loop
+ThisWorkbook.Save
+End Sub
+
